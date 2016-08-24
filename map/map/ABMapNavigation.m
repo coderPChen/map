@@ -17,7 +17,7 @@ NSString *const ABMapNavigationGaodeMap=@"高德地图";
 NSString *const ABMapNavigationTengxunMap=@"腾讯地图";
 NSString *const ABMapNavigationGooogleMap=@"谷歌地图";
 NSString *const ABMapNavigationAppleMap=@"苹果地图";
-
+#import "CLLocation+ABLocationTransform.h"
 @implementation ABMapNavigation
 
 //记录上次打开的地图
@@ -70,6 +70,8 @@ NSString *const ABMapNavigationAppleMap=@"苹果地图";
     return [[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:@"iosamap://"]];
 }
 
+
+
 //打开高德地图客户端 ， 高德地图 URL API
 + (void)openGaodeMapWithApplication:(NSString *)application
                              originName:(NSString *)originName
@@ -78,7 +80,19 @@ NSString *const ABMapNavigationAppleMap=@"苹果地图";
                    destinationName:(NSString *)destinationName
              destinationCoordinate:(CLLocationCoordinate2D) destinationCoordinate{
     
-
+    
+    
+    CLLocation *oriLocation = [[CLLocation alloc] initWithLatitude:originCoordinate.latitude longitude:originCoordinate.longitude];
+    CLLocation *marsLocation = [oriLocation locationMarsFromBaidu];
+    
+    originCoordinate = marsLocation.coordinate;
+    
+    
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:destinationCoordinate.latitude longitude:destinationCoordinate.longitude];
+    
+    CLLocation *resulutLocation = [location locationMarsFromBaidu];
+    destinationCoordinate = resulutLocation.coordinate;
+    
      // 起点 //
     NSString *originStr=[NSString stringWithFormat:@"sid=BGVIS1&slat=%lf&slon=%lf&sname=%@",originCoordinate.latitude,originCoordinate.longitude,originName];
     
@@ -94,8 +108,6 @@ NSString *const ABMapNavigationAppleMap=@"苹果地图";
     NSString *urlString = [[NSString stringWithFormat:@"iosamap://path?%@&%@&%@&dev=0&m=0&t=1",backStr,originStr,destinationStr] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
 
-    //调用打开方法后，记录这次打开的是哪个地图，下次会默认打开此地图
-//    [self setHasNavigationWithName:ABMapNavigationGaodeMap];
 }
 
 #pragma mark - 腾讯地图
@@ -111,6 +123,19 @@ NSString *const ABMapNavigationAppleMap=@"苹果地图";
 
                      destinationName:(NSString *)destinationName
                destinationCoordinate:(CLLocationCoordinate2D) destinationCoordinate {
+    
+    
+    CLLocation *oriLocation = [[CLLocation alloc] initWithLatitude:originCoordinate.latitude longitude:originCoordinate.longitude];
+    CLLocation *marsLocation = [oriLocation locationMarsFromBaidu];
+    
+    originCoordinate = marsLocation.coordinate;
+    
+    
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:destinationCoordinate.latitude longitude:destinationCoordinate.longitude];
+    
+    CLLocation *resulutLocation = [location locationMarsFromBaidu];
+    destinationCoordinate = resulutLocation.coordinate;
+    
     
     NSString *originStr=[NSString stringWithFormat:@"fromcoord=%f,%f",originCoordinate.latitude,originCoordinate.longitude];
     //目的地  type  公交：bus 驾车：drive  步行：walk（仅适用移动端）
@@ -156,6 +181,15 @@ NSString *const ABMapNavigationAppleMap=@"苹果地图";
 + (void)openAppleMapWithDestinationName:(NSString *)destinationName
                    destinationCoordinate:(CLLocationCoordinate2D) destinationCoordinate{
 
+    
+    
+    
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:destinationCoordinate.latitude longitude:destinationCoordinate.longitude];
+    
+    CLLocation *resulutLocation = [location locationMarsFromBaidu];
+    destinationCoordinate = resulutLocation.coordinate;
+    
+    
     MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:destinationCoordinate addressDictionary:nil];
     MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:placemark];

@@ -70,11 +70,9 @@ static  CPMapNavigation *instance;
 
 - (BOOL)showActionSheetInView:(UIView *)view {
     
-  
     if (![ABMapNavigation hasInstallMapApp]) {
-//        [CustomToast showDialog:@"您尚未安装任何地图，无法导航" time:1.5];
-        
-        NSLog(@"您尚未安装任何地图，无法导");
+
+        NSLog(@"您尚未安装任何地图，无法导航");
         
         return NO;
     }
@@ -99,9 +97,6 @@ static  CPMapNavigation *instance;
     }
     [sheet addButtonWithTitle:@"取消"];
     sheet.cancelButtonIndex=sheet.numberOfButtons-1;;
-    // Show the sheet
-    
-    //    [sheet showInView:self.view];
     [sheet showInView:view];
     return YES;
     
@@ -121,7 +116,6 @@ static  CPMapNavigation *instance;
     NSLog(@"actionSheet:%ld,%@",(long)buttonIndex,[actionSheet buttonTitleAtIndex:buttonIndex]);
     
     
-    
     [self p_navigationMapWithName:mapDic[[actionSheet buttonTitleAtIndex:buttonIndex]] destinationName:self.destinationName destinationCoordinate:_destinationCoordinate  originCoordinate:_originCoordinate];
     
 }
@@ -136,6 +130,7 @@ static  CPMapNavigation *instance;
 
     if ([ABMapNavigationBaiduMap isEqualToString:mapName]) {
         NSLog(@"调起百度地图");
+        
         [ABMapNavigation openBaiduMapWithOriginName:@"我的位置"
                                    originCoordinate:originCoordinate
                                     destinationName:destinationName
@@ -144,46 +139,24 @@ static  CPMapNavigation *instance;
     }else if([ABMapNavigationGaodeMap isEqualToString:mapName]){
         
         NSLog(@"调起高德地图");
-        CLLocation *oriLocation = [[CLLocation alloc] initWithLatitude:originCoordinate.latitude longitude:originCoordinate.longitude];
-        CLLocation *marsLocation = [oriLocation locationMarsFromBaidu];
-        
-        CLLocation *location = [[CLLocation alloc] initWithLatitude:destinationCoordinate.latitude longitude:destinationCoordinate.longitude];
-        
-        CLLocation *resulutLocation = [location locationMarsFromBaidu];
        
         [ABMapNavigation openGaodeMapWithApplication:@"i导游"
-                                             originName:@"我的位置" originCoordinate:marsLocation.coordinate destinationName:destinationName destinationCoordinate:resulutLocation.coordinate];
+                                             originName:@"我的位置" originCoordinate:originCoordinate destinationName:destinationName destinationCoordinate:destinationCoordinate];
         
     }else if ([ABMapNavigationTengxunMap isEqualToString:mapName]){
         
         NSLog(@"调起腾讯地图");
-        CLLocation *oriLocation = [[CLLocation alloc] initWithLatitude:originCoordinate.latitude longitude:originCoordinate.longitude];
-        CLLocation *marsLocation = [oriLocation locationMarsFromBaidu];
+      
         
-        CLLocation *location = [[CLLocation alloc] initWithLatitude:destinationCoordinate.latitude longitude:destinationCoordinate.longitude];
-        
-        CLLocation *resulutLocation = [location locationMarsFromBaidu];
-        
-        [ABMapNavigation openTengxunMapWithoriginName:@"我的位置" originCoordinate:marsLocation.coordinate destinationName:destinationName destinationCoordinate:resulutLocation.coordinate];
+        [ABMapNavigation openTengxunMapWithoriginName:@"我的位置" originCoordinate:originCoordinate destinationName:destinationName destinationCoordinate:destinationCoordinate];
     
-        
-    }else if ([ABMapNavigationGooogleMap isEqualToString:mapName]){
-        
-        [ABMapNavigation openGoogleMapWithOriginCoordinate:originCoordinate
-                                           destinationName:destinationName
-                                     destinationCoordinate:destinationCoordinate];
         
     }else if ([ABMapNavigationAppleMap isEqualToString:mapName]){
  ;
         
-        CLLocation *location = [[CLLocation alloc] initWithLatitude:destinationCoordinate.latitude longitude:destinationCoordinate.longitude];
-        
-        CLLocation *resulutLocation = [location locationMarsFromBaidu];
-        
-        
-        
+
         [ABMapNavigation openAppleMapWithDestinationName:destinationName
-                                   destinationCoordinate:resulutLocation.coordinate];
+                                   destinationCoordinate:destinationCoordinate];
     }
 }
 
