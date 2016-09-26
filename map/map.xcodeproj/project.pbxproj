@@ -13,9 +13,6 @@
 		9F361BF31D6D725F007155BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F361BF11D6D725F007155BB /* Main.storyboard */; };
 		9F361BF51D6D725F007155BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F361BF41D6D725F007155BB /* Assets.xcassets */; };
 		9F361BF81D6D725F007155BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F361BF61D6D725F007155BB /* LaunchScreen.storyboard */; };
-		9F361C031D6D72A8007155BB /* ABMapNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F361C001D6D72A8007155BB /* ABMapNavigation.m */; };
-		9F361C041D6D72A8007155BB /* CPMapNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F361C021D6D72A8007155BB /* CPMapNavigation.m */; };
-		9F361C071D6D7304007155BB /* CLLocation+ABLocationTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F361C051D6D7304007155BB /* CLLocation+ABLocationTransform.m */; };
 		9F361C0E1D6D78AA007155BB /* ABLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F361C0D1D6D78AA007155BB /* ABLocation.m */; };
 		9F361C141D6D7B57007155BB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9F361C101D6D7B57007155BB /* LICENSE */; };
 		9F361C151D6D7B57007155BB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F361C121D6D7B57007155BB /* MBProgressHUD.m */; };
@@ -23,6 +20,9 @@
 		9F361C1E1D6D7B67007155BB /* ABAnimationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F361C191D6D7B67007155BB /* ABAnimationUtils.m */; };
 		9F361C1F1D6D7B67007155BB /* ABToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F361C1B1D6D7B67007155BB /* ABToast.m */; };
 		9F361C201D6D7B67007155BB /* CustomToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F361C1D1D6D7B67007155BB /* CustomToast.m */; };
+		9FCADAC41D991E8F00CB571D /* ABMapNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCADABF1D991E8F00CB571D /* ABMapNavigation.m */; };
+		9FCADAC51D991E8F00CB571D /* CLLocation+ABLocationTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCADAC11D991E8F00CB571D /* CLLocation+ABLocationTransform.m */; };
+		9FCADAC61D991E8F00CB571D /* CPMapNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCADAC31D991E8F00CB571D /* CPMapNavigation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +36,6 @@
 		9F361BF41D6D725F007155BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F361BF71D6D725F007155BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F361BF91D6D725F007155BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F361BFF1D6D72A8007155BB /* ABMapNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABMapNavigation.h; path = ../ABMapNavigation.h; sourceTree = "<group>"; };
-		9F361C001D6D72A8007155BB /* ABMapNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABMapNavigation.m; path = ../ABMapNavigation.m; sourceTree = "<group>"; };
-		9F361C011D6D72A8007155BB /* CPMapNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPMapNavigation.h; path = ../CPMapNavigation.h; sourceTree = "<group>"; };
-		9F361C021D6D72A8007155BB /* CPMapNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPMapNavigation.m; path = ../CPMapNavigation.m; sourceTree = "<group>"; };
-		9F361C051D6D7304007155BB /* CLLocation+ABLocationTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CLLocation+ABLocationTransform.m"; path = "../CLLocation+ABLocationTransform.m"; sourceTree = "<group>"; };
-		9F361C061D6D7304007155BB /* CLLocation+ABLocationTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CLLocation+ABLocationTransform.h"; path = "../CLLocation+ABLocationTransform.h"; sourceTree = "<group>"; };
 		9F361C0C1D6D78AA007155BB /* ABLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABLocation.h; sourceTree = "<group>"; };
 		9F361C0D1D6D78AA007155BB /* ABLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABLocation.m; sourceTree = "<group>"; };
 		9F361C101D6D7B57007155BB /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -54,6 +48,12 @@
 		9F361C1B1D6D7B67007155BB /* ABToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABToast.m; sourceTree = "<group>"; };
 		9F361C1C1D6D7B67007155BB /* CustomToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomToast.h; sourceTree = "<group>"; };
 		9F361C1D1D6D7B67007155BB /* CustomToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomToast.m; sourceTree = "<group>"; };
+		9FCADABE1D991E8F00CB571D /* ABMapNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMapNavigation.h; sourceTree = "<group>"; };
+		9FCADABF1D991E8F00CB571D /* ABMapNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMapNavigation.m; sourceTree = "<group>"; };
+		9FCADAC01D991E8F00CB571D /* CLLocation+ABLocationTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ABLocationTransform.h"; sourceTree = "<group>"; };
+		9FCADAC11D991E8F00CB571D /* CLLocation+ABLocationTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ABLocationTransform.m"; sourceTree = "<group>"; };
+		9FCADAC21D991E8F00CB571D /* CPMapNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPMapNavigation.h; sourceTree = "<group>"; };
+		9FCADAC31D991E8F00CB571D /* CPMapNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPMapNavigation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 		9F361BE71D6D725F007155BB /* map */ = {
 			isa = PBXGroup;
 			children = (
-				9F361C211D6D8A0C007155BB /* 导航 */,
+				9FCADABD1D991E8100CB571D /* 导航 */,
 				9F361C171D6D7B67007155BB /* ABToast */,
 				9F361C0F1D6D7B57007155BB /* MBProgressHUD */,
 				9F361C081D6D77F5007155BB /* 定位 */,
@@ -144,17 +144,17 @@
 			path = ABToast;
 			sourceTree = "<group>";
 		};
-		9F361C211D6D8A0C007155BB /* 导航 */ = {
+		9FCADABD1D991E8100CB571D /* 导航 */ = {
 			isa = PBXGroup;
 			children = (
-				9F361C051D6D7304007155BB /* CLLocation+ABLocationTransform.m */,
-				9F361C061D6D7304007155BB /* CLLocation+ABLocationTransform.h */,
-				9F361BFF1D6D72A8007155BB /* ABMapNavigation.h */,
-				9F361C001D6D72A8007155BB /* ABMapNavigation.m */,
-				9F361C011D6D72A8007155BB /* CPMapNavigation.h */,
-				9F361C021D6D72A8007155BB /* CPMapNavigation.m */,
+				9FCADABE1D991E8F00CB571D /* ABMapNavigation.h */,
+				9FCADABF1D991E8F00CB571D /* ABMapNavigation.m */,
+				9FCADAC01D991E8F00CB571D /* CLLocation+ABLocationTransform.h */,
+				9FCADAC11D991E8F00CB571D /* CLLocation+ABLocationTransform.m */,
+				9FCADAC21D991E8F00CB571D /* CPMapNavigation.h */,
+				9FCADAC31D991E8F00CB571D /* CPMapNavigation.m */,
 			);
-			path = "导航";
+			name = "导航";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,16 +230,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F361C161D6D7B57007155BB /* README.mdown in Sources */,
+				9FCADAC41D991E8F00CB571D /* ABMapNavigation.m in Sources */,
 				9F361C0E1D6D78AA007155BB /* ABLocation.m in Sources */,
 				9F361C201D6D7B67007155BB /* CustomToast.m in Sources */,
-				9F361C041D6D72A8007155BB /* CPMapNavigation.m in Sources */,
 				9F361BF01D6D725F007155BB /* ViewController.m in Sources */,
-				9F361C071D6D7304007155BB /* CLLocation+ABLocationTransform.m in Sources */,
 				9F361C1F1D6D7B67007155BB /* ABToast.m in Sources */,
-				9F361C031D6D72A8007155BB /* ABMapNavigation.m in Sources */,
 				9F361BED1D6D725F007155BB /* AppDelegate.m in Sources */,
 				9F361C1E1D6D7B67007155BB /* ABAnimationUtils.m in Sources */,
 				9F361BEA1D6D725F007155BB /* main.m in Sources */,
+				9FCADAC61D991E8F00CB571D /* CPMapNavigation.m in Sources */,
+				9FCADAC51D991E8F00CB571D /* CLLocation+ABLocationTransform.m in Sources */,
 				9F361C151D6D7B57007155BB /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,7 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = map/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aibang.baoyi.map;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -365,7 +365,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = map/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aibang.baoyi.map;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -391,6 +391,7 @@
 				9F361BFE1D6D725F007155BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
